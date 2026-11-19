@@ -1,0 +1,25 @@
+databases:
+  - name: inventorypro-db
+    databaseName: inventorypro
+    user: inventorypro_user
+    plan: free
+
+services:
+  - type: web
+    name: inventorypro
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: inventorypro-db
+          property: connectionString
+      - key: DB_USERNAME
+        fromDatabase:
+          name: inventorypro-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: inventorypro-db
+          property: password
