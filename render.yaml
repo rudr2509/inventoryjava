@@ -11,10 +11,18 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
-      - key: DATABASE_URL
+      - key: DB_HOST
         fromDatabase:
           name: inventorypro-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: inventorypro-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: inventorypro-db
+          property: database
       - key: DB_USERNAME
         fromDatabase:
           name: inventorypro-db

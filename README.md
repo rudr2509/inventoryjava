@@ -38,4 +38,3 @@ If using a manually created Render service instead: choose Docker, set the root 
 - `spring.jpa.hibernate.ddl-auto=update` is convenient for a student/demo deployment. Use schema migrations and managed secrets for production.
 - Approval adds the approved requested quantity to the product stock.
 - Demo accounts are seeded automatically only if their usernames do not already exist.
-"# inventoryjava" 
